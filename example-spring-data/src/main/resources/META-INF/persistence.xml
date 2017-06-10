@@ -1,0 +1,35 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+        version="2.0">
+    <persistence-unit name="example.jpa.transaction">
+        <!-- You should define a Jpa provider. In this example, we use Hibernate as a provider.  -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<class>example.spring.data.entity.Product</class>
+
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+			<property name="javax.persistence.jdbc.url"    value="jdbc:h2:mem:test" />
+			<property name="javax.persistence.jdbc.user" value="sa" />
+			<property name="javax.persistence.jdbc.password" value="" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
+			<property name="show_sql" value="true"/>
+			<property name="hibernate.temp.use_jdbc_metadata_defaults" value="false"/>
+      </properties>
+        <!-- Database connection properties and hiberate specific properties  -->
+        <!-- If you just want to use local memory database, use H2 database.
+                <properties>
+                    <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+                    <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jpaExample" />
+                    <property name="javax.persistence.jdbc.user" value="testuser" />
+                    <property name="javax.persistence.jdbc.password" value="testuser" />
+                    <property name="hibernate.hbm2ddl.auto" value="create-drop" />
+                    <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+                    <property name="hibernate.show_sql" value="true" />
+                    <property name="hibernate.hbm2ddl.auto" value="create" />
+                </properties>
+         -->
+            </persistence-unit>
+</persistence>
