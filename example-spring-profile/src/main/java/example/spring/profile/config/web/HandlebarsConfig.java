@@ -1,4 +1,4 @@
-package example.spring.profile.config;
+package example.spring.profile.config.web;
 
 import com.github.jknack.handlebars.springmvc.HandlebarsViewResolver;
 import org.springframework.context.annotation.Bean;

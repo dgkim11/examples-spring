@@ -1,15 +1,19 @@
 package example.spring.profile.beans;
 
+import example.spring.profile.domain.Employee;
 import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Component;
 
 /**
  * User : Dongle (Dongkyun)
  * Date : 5/13/17
  */
+@Component
 @Profile("integration")
 public class EmployeeServiceItImpl implements EmployeeService {
     @Override
-    public void increaseSalary(long empId, long amount) {
-        System.out.println(String.format("increased Salary for empId:%d in the integration zone."));
+    public Employee updateDepartment(Employee employee) {
+        employee.setDepartment("department-integration");
+        return employee;
     }
 }

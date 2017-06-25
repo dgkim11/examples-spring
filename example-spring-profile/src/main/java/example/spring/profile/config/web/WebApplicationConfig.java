@@ -1,8 +1,9 @@
-package example.spring.profile.config;
+package example.spring.profile.config.web;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -15,7 +16,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  */
 @EnableWebMvc
 @Configuration
-@ComponentScan(basePackages = { "example.spring.profile.beans", "example.spring.profile.controller" })
+@Import({HandlebarsConfig.class})
+@ComponentScan(basePackages = { "example.spring.profile.controller" })
 public class WebApplicationConfig extends WebMvcConfigurerAdapter {
 
     @Override

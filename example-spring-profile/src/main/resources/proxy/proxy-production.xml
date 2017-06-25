@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="proxy.server.host">100.3.3.3</entry>
+    <entry key="proxy.server.port">3999</entry>
+</properties>
